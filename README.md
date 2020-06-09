@@ -1,10 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ## Library used
 
-npm install request
-npm install express
-npm install mongodb
-npm init --yes
+npm install request<br />
+npm install express<br />
+npm install mongodb<br />
+npm init --yes<br />
 
 ## Available Scripts
 
