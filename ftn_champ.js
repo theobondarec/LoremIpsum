@@ -225,3 +225,14 @@ function lane_pref(){
     return lane_choisi
 }
 var lane_game = lane_pref()
+
+// Fonction triant les champs selon leur hp (à diversifier)
+function tri_hp(tab){
+    for (i=0;i<148;i++){
+        tab[i] = { name: champions[i].name, value: champions[i].stats.hp }
+    }
+    tab.sort(function (a, b) {
+        return b.value - a.value;
+    });
+    return tab;  
+}
