@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ChampionTags from './ChampionTags'
 
 class championInfo extends Component {
     constructor(props){
