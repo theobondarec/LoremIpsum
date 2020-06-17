@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
+import ChampionTags from './ChampionTags'
 
 class championInfo extends Component {
     constructor(props){
         super (props);
     this.state = {
         champions:require('./champ.json').filter(c=> c.name ===this.props.match.params.id),
-        }
-
+        }   
     }
     render() { 
         return (  
@@ -20,9 +20,6 @@ class championInfo extends Component {
                                     {this.state.champions[0].name}
                                     <h5>{this.state.champions[0].title}</h5>
                                 </h1>
-                                <div className="row">
-                                    
-                                </div>
                             </div>
                         </div>
                     </div>
