@@ -1,23 +1,21 @@
-import React, { Component } from 'react'
-
-export default function ChampionTags (){
-    this.fighter = {
+var ChampionTags = {
+    fighter = {
         icon = 'https://github.com/RiotAPI/Riot-Games-API-Developer-Assets/tree/master/class-icons/fighters.png',
         text = 'fighter'
-    }
-    this.mage = {
+    },
+    mage = {
         icon = 'https://github.com/RiotAPI/Riot-Games-API-Developer-Assets/tree/master/class-icons/mages.png',
         text = 'mage'
-    }
-    this.marksman = {
+    },
+    marksman = {
         icon = 'https://github.com/RiotAPI/Riot-Games-API-Developer-Assets/tree/master/class-icons/marksmen.png',
         text = 'marksman'
-    }
-    this.slayer = {
+    },
+    slayer = {
         icon = 'https://github.com/RiotAPI/Riot-Games-API-Developer-Assets/tree/master/class-icons/slayers.png',
         text = 'slayer'
-    }
-    this.tank = {
+    },
+    tank = {
         icon = 'https://github.com/RiotAPI/Riot-Games-API-Developer-Assets/tree/master/class-icons/tanks.png',
         text = 'tank'
     }
