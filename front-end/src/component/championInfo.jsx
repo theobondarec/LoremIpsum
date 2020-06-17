@@ -20,6 +20,9 @@ class championInfo extends Component {
                                     {this.state.champions[0].name}
                                     <h5>{this.state.champions[0].title}</h5>
                                 </h1>
+                                <div className="row">
+                                    
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -44,11 +47,6 @@ class championInfo extends Component {
                                     </tr>
                                 </tbody>
                             </table>
-                            </div>
-                            <div className = "row">
-                                <div className = "col"><a>Placeholder</a></div >
-                                <div className = "col-8"><a>Placeholder for other stats</a></div >
-                                <div className = "col"><a>Placeholder</a></div >
                             </div>
                         </main>
                     </div>

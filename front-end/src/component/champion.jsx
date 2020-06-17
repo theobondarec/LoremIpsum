@@ -6,7 +6,8 @@ class Champion extends Component {
         Url:this.props.champion.icon,
         id:this.props.champion.name,
         name:this.props.champion.name,
-        hp:this.props.champion.stats.hp
+        hp:this.props.champion.stats.hp,
+        tags:this.props.champion.tags
     };
     handleSelection = id =>{
         console.log(id,this)
