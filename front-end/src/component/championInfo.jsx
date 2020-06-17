@@ -13,7 +13,7 @@ class championInfo extends Component {
             <div className="container" style={{marginTop: 20}}>
                 <div className="row">
                     <div className="col-2 ml-4">
-                        <div class = "card" style={{width: 200}}>
+                        <div class = "card text-white bg-dark mb-3" style={{width: 200}}>
                             <img src={this.state.champions[0].icon} class="rounded mx-auto d-block" alt= {this.state.champions[0].name} style={{marginTop: 40,width: 120, height: 120, }}/>
                             <div class="card-body">
                                 <h1 class="card-title" style={{textAlign: 'center'}}>
