@@ -3,6 +3,8 @@
         "Darkin",
         "aatrox",
         "attackrange",
-        "movespeed"
+        "hpregen",
+        "movespeed",
+        "mpregen"
     ]
 }

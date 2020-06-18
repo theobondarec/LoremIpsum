@@ -7,7 +7,12 @@ class Champion extends Component {
         id:this.props.champion.name,
         name:this.props.champion.name,
         hp:this.props.champion.stats.hp,
-        tags:this.props.champion.tags
+        mp:this.props.champion.stats.mp,
+        movespeed:this.props.champion.stats.movespeed,
+        armor:this.props.champion.stats.armor,
+        attackrange:this.props.champion.stats.attackrange,
+        hpregen:this.props.champion.stats.hpregen,
+        mpregen:this.props.champion.stats.mpregen,
     };
     handleSelection = id =>{
         console.log(id,this)
