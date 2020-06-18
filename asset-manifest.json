@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/LoremIpsum/static/css/main.5f361e03.chunk.css",
+    "main.js": "/LoremIpsum/static/js/main.9dab596b.chunk.js",
+    "main.js.map": "/LoremIpsum/static/js/main.9dab596b.chunk.js.map",
+    "runtime-main.js": "/LoremIpsum/static/js/runtime-main.1a6e2886.js",
+    "runtime-main.js.map": "/LoremIpsum/static/js/runtime-main.1a6e2886.js.map",
+    "static/css/2.7b9c8937.chunk.css": "/LoremIpsum/static/css/2.7b9c8937.chunk.css",
+    "static/js/2.0961a759.chunk.js": "/LoremIpsum/static/js/2.0961a759.chunk.js",
+    "static/js/2.0961a759.chunk.js.map": "/LoremIpsum/static/js/2.0961a759.chunk.js.map",
+    "index.html": "/LoremIpsum/index.html",
+    "precache-manifest.70e7f6a3b6c94fc051df48fdee817bf9.js": "/LoremIpsum/precache-manifest.70e7f6a3b6c94fc051df48fdee817bf9.js",
+    "service-worker.js": "/LoremIpsum/service-worker.js",
+    "static/css/2.7b9c8937.chunk.css.map": "/LoremIpsum/static/css/2.7b9c8937.chunk.css.map",
+    "static/css/main.5f361e03.chunk.css.map": "/LoremIpsum/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.0961a759.chunk.js.LICENSE.txt": "/LoremIpsum/static/js/2.0961a759.chunk.js.LICENSE.txt",
+    "static/media/bootstrap.css": "/LoremIpsum/static/media/glyphicons-halflings-regular.fa277232.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1a6e2886.js",
+    "static/css/2.7b9c8937.chunk.css",
+    "static/js/2.0961a759.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.9dab596b.chunk.js"
+  ]
+}
