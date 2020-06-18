@@ -21,7 +21,7 @@ class championInfo extends Component {
                                 </h1>
                             </div>
                         </div>
-                        <div class="container mt-3">
+                        <div class="container">
                             <table class="table table-dark" >
                                 <thead>
                                     <tr>
