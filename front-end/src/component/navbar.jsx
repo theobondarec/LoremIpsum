@@ -6,7 +6,7 @@ class NavBar extends Component {
     render() { 
         return ( 
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
-            <h3>LOGO</h3>
+            <h3>a</h3>
             <ul>
                 <Link to='/'>
                     <li className="btn btn-outline-success">Home</li>

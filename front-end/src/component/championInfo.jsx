@@ -49,10 +49,3 @@ class championInfo extends Component {
 }
 
 export default championInfo;
-/*
-<div class="row row-cols-4">
-                        <div class="col">HP:{this.state.champions[0].stats.hp}</div>
-                        <div class="col">HP PER LEVEL:{this.state.champions[0].stats.hpperlevel}</div>
-                        <div class="col">Armor:{this.state.champions[0].stats.armor}</div>
-                        <div class="col">movement speed:{this.state.champions[0].stats.movespeed}</div>
-                    </div>*/
