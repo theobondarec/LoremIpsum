@@ -8,7 +8,7 @@ class championInfo extends Component {
         champions:require('./champ.json').filter(c=> c.name ===this.props.match.params.id),
         infos:axios.get("http://localhost:8080/champion/"+this.props.match.params.id+"/IRON").then(response=>{this.setState({infos:response.data})}),
         league:"IRON",
-        
+
         }
     this.handleChange=this.handleChange.bind(this);
 
@@ -23,17 +23,17 @@ class championInfo extends Component {
             <div className="container" style={{marginTop: 20}}>
                 <div className="row">
                     <div className="col-2 ml-4">
-                        <div class = "card text-white text-center bg-dark mb-3" style={{width: 200}}>
-                            <img src={this.state.champions[0].icon} class="rounded mx-auto d-block" alt= {this.state.champions[0].name} style={{marginTop: 40,width: 120, height: 120, }}/>
-                            <div class="card-body">
-                                <h1 class="card-title">
+                        <div className = "card text-white text-center bg-dark mb-3" style={{width: 200}}>
+                            <img src={this.state.champions[0].icon} className="rounded mx-auto d-block" alt= {this.state.champions[0].name} style={{marginTop: 40,width: 120, height: 120, }}/>
+                            <div className="card-body">
+                                <h1 className="card-title">
                                     {this.state.champions[0].name}
                                     <h5>{this.state.champions[0].title}</h5>
                                 </h1>
                             </div>
                         </div>
                         <form >
-                            <select value={this.state.league} onChange={this.handleChange} className="btn btn-secondary dropdown-toggle">
+                            <select value={this.state.league} onChange={this.handleChange} className="btn btn-secondary dropdown-toggle bg-dark">
                                 <option value="IRON">IRON</option>
                                 <option value="BRONZE">BRONZE</option>
                                 <option value="SILVER">SILVER</option>
@@ -45,9 +45,9 @@ class championInfo extends Component {
                                 <option value="CHALLENGER">CHALLENGER</option>
                             </select>
                         </form> 
-                        <div class = "card text-white bg-dark mb-3" style={{width: 200}}>
-                            <div class="card-body">
-                                <h2 class="card-title">Base Stats</h2>
+                        <div className = "card text-white bg-dark mb-3" style={{width: 200, marginTop:20}}>
+                            <div className="card-body">
+                                <h2 className="card-title">Base Stats</h2>
                                 <p>HP : {this.state.champions[0].stats.hp}</p>
                                 <p>MP : {this.state.champions[0].stats.mp}</p>
                                 <p>Armor : {this.state.champions[0].stats.armor}</p>
