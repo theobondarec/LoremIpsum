@@ -21,10 +21,7 @@ class championInfo extends Component {
                                 </h1>
                             </div>
                         </div>
-                    </div>
-                    <div className="col" style={{marginLeft: 40}}>
-                        <main>
-                            <div class="container mt-3">
+                        <div class="container mt-3">
                             <table class="table table-dark" >
                                 <thead>
                                     <tr>
@@ -44,6 +41,10 @@ class championInfo extends Component {
                                 </tbody>
                             </table>
                             </div>
+                    </div>
+                    <div className="col" style={{marginLeft: 40}}>
+                        <main>
+                            
                         </main>
                     </div>
                 </div>
