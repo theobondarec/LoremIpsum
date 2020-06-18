@@ -13,7 +13,6 @@ class Champion extends Component {
         attackrange:this.props.champion.stats.attackrange,
         hpregen:this.props.champion.stats.hpregen,
         mpregen:this.props.champion.stats.mpregen,
-        crit:this.props.champion.stats.crit,
         attackdamage:this.props.champion.stats.attackdamage,
         attackspeed:this.props.champion.stats.attackspeed,
 

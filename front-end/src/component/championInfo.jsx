@@ -27,7 +27,6 @@ class championInfo extends Component {
                                 <p>HP : {this.state.champions[0].stats.hp}</p>
                                 <p>MP : {this.state.champions[0].stats.mp}</p>
                                 <p>Armor : {this.state.champions[0].stats.armor}</p>
-                                <p>Crit : {this.state.champions[0].stats.crit}</p>
                                 <p>Attack Range : {this.state.champions[0].stats.attackrange}</p>
                                 <p>Attack Damage : {this.state.champions[0].stats.attackdamage}</p>
                                 <p>Attack Speed : {this.state.champions[0].stats.crit}</p>
