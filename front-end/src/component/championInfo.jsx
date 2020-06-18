@@ -5,7 +5,17 @@ class championInfo extends Component {
         super (props);
     this.state = {
         champions:require('./champ.json').filter(c=> c.name ===this.props.match.params.id),
-        }   
+        infos:axios.get("http://localhost:8080/champion/"+this.props.match.params.id+"/IRON").then(response=>{this.setState({infos:response.data})}),
+        league:"IRON",
+
+        }
+    this.handleChange=this.handleChange.bind(this);
+
+    }
+    handleChange(event){
+        this.setState({league:event.target.value})
+        this.setState({infos:axios.get("http://localhost:8080/champion/"+this.props.match.params.id+"/"+event.target.value).then(response=>{this.setState({infos:response.data})})})
+
     }
     render() { 
         return (  
@@ -21,6 +31,19 @@ class championInfo extends Component {
                                 </h1>
                             </div>
                         </div>
+                        <form >
+                            <select value={this.state.league} onChange={this.handleChange} className="btn btn-secondary dropdown-toggle">
+                                <option value="IRON">IRON</option>
+                                <option value="BRONZE">BRONZE</option>
+                                <option value="SILVER">SILVER</option>
+                                <option value="GOLD">GOLD</option>
+                                <option value="PLATINUM">PLATINIUM</option>
+                                <option value="DIAMOND">DIAMOND</option>
+                                <option value="MASTER">MASTER</option>
+                                <option value="GRANDMASTER">GRANDMASTER</option>
+                                <option value="CHALLENGER">CHALLENGER</option>
+                            </select>
+                        </form> 
                         <div class = "card text-white bg-dark mb-3" style={{width: 200}}>
                             <div class="card-body">
                                 <h2 class="card-title">Base Stats</h2>
@@ -38,7 +61,52 @@ class championInfo extends Component {
                     </div>
                     <div className="col" style={{marginLeft: 40}}>
                         <main>
-                            
+                            <main>
+                                <div className="container mt-3">
+                                <table className="table table-dark" >
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Winrate</th>
+                                            <th scope="col">Kill Participation</th>
+                                            <th scope="col">totalMinionKilled</th>
+                                            <th scope="col">kill</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">{this.state.infos.win}</th>
+                                            <td>{this.state.infos.killParticipation}</td>
+                                            <td>{this.state.infos.totalMinionKilled}</td>
+                                            <td>{this.state.infos.kill}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </main>
+                            <main>
+                                <div className="container mt-3">
+                                <table className="table table-dark" >
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">TOP</th>
+                                            <th scope="col">JNG</th>
+                                            <th scope="col">MID</th>
+                                            <th scope="col">ADC</th>
+                                            <th scope="col">SUP</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">{this.state.infos.top}%</th>
+                                            <td>{this.state.infos.jungle}%</td>
+                                            <td>{this.state.infos.mid}%</td>
+                                            <td>{this.state.infos.adc}%</td>
+                                            <td>{this.state.infos.support}%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </main>
                         </main>
                     </div>
                 </div>
