@@ -21,26 +21,9 @@ class championInfo extends Component {
                                 </h1>
                             </div>
                         </div>
-                        <div class="container">
-                            <table class="table table-dark" >
-                                <thead>
-                                    <tr>
-                                        <th scope="col">HP</th>
-                                        <th scope="col">HP PER LEVEL</th>
-                                        <th scope="col">Armor</th>
-                                        <th scope="col">Movement speed</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">{this.state.champions[0].stats.hp}</th>
-                                        <td>{this.state.champions[0].stats.hpperlevel}</td>
-                                        <td>{this.state.champions[0].stats.armor}</td>
-                                        <td>{this.state.champions[0].stats.movespeed}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            </div>
+                        <div>
+                            
+                        </div>
                     </div>
                     <div className="col" style={{marginLeft: 40}}>
                         <main>
