@@ -5,12 +5,14 @@ import TableauChampion from './component/TableauChampion';
 import {BrowserRouter as Router, Switch,Route } from 'react-router-dom';
 import championInfo from './component/championInfo'
 
+//document.body.style.backgroundColor = "fcfcfc";
 
-function App() {
+export default function App() {
   return (
-    <React.Fragment>
+    <div>
+      <React.Fragment>
         <Router>
-          <NavBar/>
+          <NavBar />
           <Switch>
             <Route path="/" exact component={Home}/>
             <Route path="/Champion/:id" component={championInfo}/>
@@ -18,6 +20,8 @@ function App() {
           </Switch>
         </Router>
     </React.Fragment>
+    </div>
+    
   );
 }
 const Home=()=>(
@@ -25,4 +29,25 @@ const Home=()=>(
     <h1>HOME PAGE</h1>
   </div>
 )
-export default App;
+
+/*
+export default function App() {
+  return (
+    <div className = "container">
+      <div className = "row">
+        <div className = "col">
+          
+        </div >
+        <div className = "col-8">
+          
+        </div >
+        <div className = "col">
+          
+        </div >
+      </div>
+      
+    </div>
+    
+  )
+}
+*/
