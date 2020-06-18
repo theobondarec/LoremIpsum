@@ -32,7 +32,7 @@ class championInfo extends Component {
                     </div>
                 </div>
             </div>
-                
+            
         );
     }
 }
