@@ -19,6 +19,8 @@ function App() {
             <Route path="/Champion/:id" component={championInfo}/>
             <Route path="/Champion" exact component={TableauChampion}/>
             <Route path="/Conseil" exact component={Conseil}/>
+            <Route path="/Conseil/:pseudo/:champion" exact component={conseil_joueur}/>
+
           </Switch>
         </Router>
     </React.Fragment>

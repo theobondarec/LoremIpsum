@@ -24,5 +24,5 @@ class Champion extends Component {
         )
     }
 }
- 
+
 export default Champion;

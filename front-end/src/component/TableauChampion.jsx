@@ -1,6 +1,5 @@
 import Champion from './champion';
 import React, { Component } from 'react';
-import Lol from "./lol.jpg"
 import {Link} from 'react-router-dom'
 class tableauChampion extends Component {
     constructor(props){
