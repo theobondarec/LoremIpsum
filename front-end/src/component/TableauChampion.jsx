@@ -25,12 +25,11 @@ class tableauChampion extends Component {
                             </Link>
                         </form>
                     </nav>
-
                 <div style={{marginTop: 20}}>
                     <div className="container">
                         <div className="row">
-                                <Champion key={champion.id} champion={champion} />)}
-                            {this.state.champions.map(champion=>
+                                <Champion key={champion.id} champion={champion} />
+                                {this.state.champions.map(champion=><Champion key={champion.id} champion={champion} />)}
                         </div>
                     </div>
                 </div>
