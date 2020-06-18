@@ -503,7 +503,7 @@ function getRandAdvice(){
     ];
         var TabLength =  TabRandAdvices.length;
         var  n = Math.floor(Math.random() * TabLength);
-        console/log(TabRandAdvices[n]);
+        console.log(TabRandAdvices[n]);
         res.send(TabRandAdvices[n]);
     });
 }

@@ -11,29 +11,6 @@ class conseil_joueur extends Component {
         notes:axios.get("http://localhost:8080"+this.props.match.url).then(response=>{this.setState({notes:response.data.notesTab}); this.setState({stats:response.data.statsTab})}),
         stats:{}
         }
-        this.data=[
-            {
-                data:{
-                    Damage:(this.state.notes.Damage)/10,
-                    Farm:(this.state.notes.Farm)/10,
-                    Golds:(this.state.notes.Golds)/10,
-                    Vision:(this.state.notes.Vision)/10,
-                    killParticipation:(this.state.notes.killParticipation)/10,
-
-                },
-                meta:{color:'red'}
-            },
-            {data:{
-                Damage:0.7,
-                Farm:0.7,
-                Golds:0.7,
-                Vision:0.7,
-                killParticipation:0.7,
-        
-            },
-            meta:{color:'green'}
-            }
-        ]
         this.captions={
             Damage:'Damage',
             Farm:'Farm',
