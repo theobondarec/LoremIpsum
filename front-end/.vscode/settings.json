@@ -2,9 +2,12 @@
     "cSpell.words": [
         "Darkin",
         "aatrox",
+        "attackdamage",
         "attackrange",
+        "attackspeed",
         "hpregen",
         "movespeed",
-        "mpregen"
+        "mpregen",
+        "regen"
     ]
 }
