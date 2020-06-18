@@ -4,7 +4,7 @@ import './App.css';
 import TableauChampion from './component/TableauChampion';
 import {BrowserRouter as Router, Switch,Route } from 'react-router-dom';
 import championInfo from './component/championInfo'
-import Home from './component/Home'
+import Home from './pages/Home'
 import Conseil from './pages/conseil'
 import conseil_joueur from './pages/conseil_joueur'
 
