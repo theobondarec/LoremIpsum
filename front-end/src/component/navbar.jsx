@@ -6,7 +6,7 @@ class NavBar extends Component {
     state = {  }
     render() { 
         return ( 
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <h3>
                 <img src={Logo} alt="logo" width="40% \9" />
             </h3>
@@ -25,5 +25,5 @@ class NavBar extends Component {
             );
     }
 }
- 
+
 export default NavBar;

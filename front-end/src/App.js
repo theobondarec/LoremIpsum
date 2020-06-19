@@ -13,7 +13,7 @@ function App() {
   return (
     <React.Fragment>
         <Router>
-          <NavBar/>
+          <NavBar />
           <Switch>
             <Route path="/" exact component={Home}/>
             <Route path="/Champion/:id" component={championInfo}/>

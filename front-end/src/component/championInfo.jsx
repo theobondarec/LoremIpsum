@@ -32,7 +32,7 @@ class championInfo extends Component {
                                 </h1>
                             </div>
                         </div>
-                        <form >
+                        <form>
                             <select value={this.state.league} onChange={this.handleChange} className="btn btn-secondary dropdown-toggle bg-dark">
                                 <option value="IRON">IRON</option>
                                 <option value="BRONZE">BRONZE</option>
