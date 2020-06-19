@@ -6,23 +6,23 @@ const client = new MongoClient(uri, {useNewUrlParser: true, useUnifiedTopology: 
 
 //division des taches//
     //personne 1 uncom de la ligne 15 => 15,509H
-//const leagueArray = ["IRON"];
+//const leagueArray = ["IRON"];                                     ////////FINI////////
     //personne 2 uncom de la ligne 17 => 13,247333333H
-//const leagueArray = ["BRONZE"];
+//const leagueArray = ["BRONZE"];                                   ////////FINI////////
     //personne 3 uncom de la ligne 19 => 15,8966667H
-//const leagueArray = ["SILVER"];
+//const leagueArray = ["SILVER"];                                   ////////FINI////////////
     //personne 4 uncom de la ligne 21 => 15,866H
-//const leagueArray = ["GOLD"];
-    //personne 5 uncom de la ligne 23 => 21,245666667H                    ////////DEJA EN COURS DE TRAITEMENT////////
-//const leagueArray = ["PLATINUM"];
-    //personne 6 uncom de la ligne 25 => 21,2133333H
-//const leagueArray = ["DIAMOND"];
+//const leagueArray = ["GOLD"];                                     ////////FINI////////////
+    //personne 5 uncom de la ligne 23 => 21,245666667H                    
+//const leagueArray = ["PLATINUM"];                                 ////////FINI////////
+    //personne 6 uncom de la ligne 25 => 21,2133333H                      
+//const leagueArray = ["DIAMOND"];                                  ////////FINI///////
     //personne 6 uncom de la ligne 27 => 13,32666667H
-//const leagueArray = ["MASTER", "GRANDMASTER", "CHALLENGER"];
-//const delay = [0, ‬20310, 34120];
+//const leagueArray = ["MASTER", "GRANDMASTER", "CHALLENGER"];      ////////FINI////////
+//const delay = [0, 20310, 34120];
 
 function getGameId(n){
-    const collection = client.db("GAME_ID").collection(leagueArray[n]); 
+    const collection = client.db("GAME_ID").collection(leagueArray[n]);
     
     collection.find().toArray( (err, docs) => {
         if(err){
@@ -31,15 +31,15 @@ function getGameId(n){
         console.log('Array built successfuly');
         
         
-        //Si ca crash mettre le numero de la game ou ca a crash ici; 
-        var repriseCrash = 0;
+        //Si ca crash mettre le numero de la game ou ca a crash ici;
+        var repriseCrash = 28000;
         docs.forEach( (elem, index, array) => {
             setTimeout( function() {
                 if(array[index+repriseCrash].accountId !== null){
-                    console.log("ligue: " + leagueArray[n] + ' --> game n° ' + index + ' : ' + array[index+repriseCrash].gameId);
+                    console.log("ligue: " + leagueArray[n] + ' --> game n° ' + (index+repriseCrash) + ' : ' + array[index+repriseCrash].gameId);
                     getGame(array[index+repriseCrash].gameId, n);
                 } 
-           }, index * 1300); 
+           }, index * 1200); 
         });
     });
 }
@@ -49,7 +49,7 @@ function getGame(gameId, n) {
     var options = {
         method: 'GET',
         url: 'https://euw1.api.riotgames.com/lol/match/v4/matches/'+gameId,
-        qs: {api_key: 'RGAPI-c3c5c59b-2ce1-44f7-886e-a8062a3ef664'}
+        qs: {api_key: 'RGAPI-974f3f79-65f3-45a9-b9eb-248ddb52b789'}
         
     };
     
@@ -230,7 +230,7 @@ client.connect(err => {
                 getGameId(index);
                 console.log('Done : ' + index);
 
-           }, index * 1300); 
+           }, index * 1200); 
         });
         
     }

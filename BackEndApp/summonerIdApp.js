@@ -60,7 +60,7 @@ function temp(league, rank, n){
 
                 for(var j = 0; j < bodyJson.length; j++){
 
-                    const collection = client.db(league).collection(bodyJson[j].rank);  //(n+1).toString()
+                    const collection = client.db((n+1).toString()).collection(bodyJson[j].rank); 
                     //Info a push dans dB
                     var data = {
                         "summonerId":bodyJson[j].summonerId,

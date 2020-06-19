@@ -12,7 +12,7 @@ var loca = [
     ["PLATINUM", "I", "II", "III", "IV"],
     ["DIAMOND", "I", "II", "III", "IV"],
     ["MASTER", "I"],  
-    ["GRANDMASTER", "I"],
+    ["GRANDMASERT", "I"],
     ["CHALLENGER", "I"]
 ];
 
@@ -28,11 +28,13 @@ client.connect(err => {
             loca[i].forEach( (ee, ii, aa) => {
 
                 if(ii>0){
-                    console.log(a[i][0] + ' ' + ee + ' --> CLEAR');  
+                    console.log(a[i][0] + ' ' + ee);  
 
                     const collection = client.db(a[i][0]).collection(ee);
 
                     collection.drop();
+
+                    console.log('Db clear');
                 }
             });
         });

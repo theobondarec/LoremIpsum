@@ -11,19 +11,13 @@ var location = [
     ["GOLD", "I", "II", "III", "IV"],
     ["PLATINUM", "I", "II", "III", "IV"],
     ["DIAMOND", "I", "II", "III", "IV"],
-    ["MASTER", "I"],  
-    ["GRANDMASERT", "I"],
     ["CHALLENGER", "I"],
+    ["GRANDMASTER", "I"],
+    ["MASTER", "I"],
     ["FIN"]
 ];
 
-/*var location = [
-    ["baseTest1", "I", "II"],
-    ["baseTest2", "I", "II"],
-    ["FIN"]
-];*/
-
-function getSumId(a, b){
+function getSumId(a, b, apiKey){
     const collection = client.db(location[a][0]).collection(location[a][b]);
 
     collection.find().toArray( (error, documents) => {
@@ -36,7 +30,7 @@ function getSumId(a, b){
             documents.forEach( (elem,index, array) => {
                 setTimeout(function () {
                     console.log(index + ' -> ' + elem.name);
-                    getApiAccId(elem.summonerId, elem.name, elem.ligue, a, b);
+                    getApiAccId(elem.summonerId, elem.name, elem.ligue, a, b, apiKey);
                     if (index === array.length -1) resolve();
                 }, index * 1200 );
             });
@@ -58,12 +52,12 @@ function getSumId(a, b){
 }
 
 
-function getApiAccId(sumId, sumName, sumLigue, a, b){
+function getApiAccId(sumId, sumName, sumLigue, a, b, apiKey){
     const request = require('request');
     var options = {
         method: 'GET',
         url: 'https://euw1.api.riotgames.com/lol/summoner/v4/summoners/'+sumId,
-        qs: {api_key: 'RGAPI-7716bbe8-4a9b-4308-b5b5-15de08b5cf5e'}
+        qs: {api_key: apiKey}
     };
     
     request(options, (err, response, body) => {
@@ -106,7 +100,8 @@ client.connect(err => {
     } else {
         console.log('Connected successfully to server', uri);
         
-        getSumId(0, 1);
+        const apiKey = 'RGAPI-acecf2d0-2062-4f2f-bc42-dc4af5492163';
+        getSumId(0, 1, apiKey);
 
     }
 });
