@@ -9,12 +9,10 @@ class Conseil extends Component {
         super(props)
     this.handleChangePseudo=this.handleChangePseudo.bind(this);
     this.handleChangeChampion=this.handleChangeChampion.bind(this)
-    this.handleClick=this.handleClick.bind(this);
     }
     state = { 
         pseudo:"",
         champion:"",
-        infos:{}
     }
     handleChangeChampion(event){
         this.setState({champion:event.target.value})
@@ -23,19 +21,14 @@ class Conseil extends Component {
         this.setState({pseudo:event.target.value})
     }
 
-    handleClick(event){
-        event.preventDefault();
-        //axios.get("http://localhost:8080/Conseil/"+this.state.pseudo+"/"+this.state.champion).then(response=>{this.setState({infos:response})})
-        axios.get("http://localhost:8080/Conseil/"+this.state.pseudo+"/"+this.state.champion).then(function(response){console.log(response)})
-        console.log(this.state.infos)
-    }
+
 
     render() { 
         return (
             <div>
                 <div >
                     <nav className="navbar navbar-light bg-light">
-                        <form className="form-inline" onSubmit={this.handleClick}>
+                        <form className="form-inline" >
                             <input  className="form-control mr-sm-2" type="pseudo" placeholder="Pseudo" aria-label="Pseudo" value={this.state.pseudo} onChange={this.handleChangePseudo}/>
                             <input  className="form-control mr-sm-2" type="champion" placeholder="champion" aria-label="Pseudo" value={this.state.champion} onChange={this.handleChangeChampion}/>
                             <Link to={"/Conseil/"+this.state.pseudo+"/"+this.state.champion}>
