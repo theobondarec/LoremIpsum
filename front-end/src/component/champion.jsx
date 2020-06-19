@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
 
-
 class Champion extends Component {
     state = {
         Url:this.props.champion.icon,

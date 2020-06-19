@@ -24,9 +24,9 @@ function recuperationAccountId(playerName, championName, res) {
     var request = require("request");
 
     var option = {
-        method: 'GET',
-        url: 'https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/'+playerName,
-        qs: {api_key: apiKey}
+      method: 'GET',
+      url: 'https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/'+playerName,
+      qs: {api_key: apiKey}
     };
     
     request(option, (error, response, body) => {
@@ -91,9 +91,9 @@ function recuperationInfoChamp(accountId, championName, ligue, res){
     
     var request = require("request");
     var option = {
-        method: 'GET',
-        url: 'https://euw1.api.riotgames.com/lol/match/v4/matchlists/by-account/'+accountId+'?champion='+championKey+'&queue='+420+'&endIndex=15',
-        qs: {api_key: apiKey}
+      method: 'GET',
+      url: 'https://euw1.api.riotgames.com/lol/match/v4/matchlists/by-account/'+accountId+'?champion='+championKey+'&queue='+420+'&endIndex=15',
+      qs: {api_key: apiKey}
     };
     request(option, (error, response, body) => {
         if (error) throw new Error(error);
@@ -142,7 +142,7 @@ function analyseStats(gameId, accountId, championName ,championKey, histoSize, l
                     var index=0;
                     for(var i = 0; i<10; i++){
                         if(bodyJson.participants[i].championId === championKey){
-                            index = i;
+                           index = i;
                             break;
                         }
                     }
@@ -166,7 +166,7 @@ function analyseStats(gameId, accountId, championName ,championKey, histoSize, l
                     }
                     else{killParticipation = ((killsPerso+assistPerso)/totalKillsTeam[1])*100;
                         if(totalKillsTeam[1] === 0 || killParticipation === Infinity){killParticipation = 0}
-                        else{killParticipation = ((killsPerso+assistPerso)/totalKillsTeam[1])*100;}
+                         else{killParticipation = ((killsPerso+assistPerso)/totalKillsTeam[1])*100;}
                         }
 
                     var role = [0, 0, 0, 0 ,0];

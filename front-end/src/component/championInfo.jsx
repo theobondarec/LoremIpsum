@@ -5,9 +5,15 @@ class championInfo extends Component {
     constructor(props){
         super (props);
     this.state = {
+<<<<<<< HEAD
         champions: require('../assets/champ.json').filter(c => c.name === this.props.match.params.id),
         infos:axios.get("http://localhost:8080/champion/" + this.props.match.params.id + "/IRON").then(response => { this.setState({ infos:response.data }) }),
         league: "IRON",
+=======
+        champions:require('../assets/champ.json').filter(c=> c.name ===this.props.match.params.id),
+        infos:axios.get("http://localhost:8080/champion/"+this.props.match.params.id+"/IRON").then(response=>{this.setState({infos:response.data})}),
+        league:"IRON",
+>>>>>>> FRONT-end-vf
 
         }
     this.handleChange = this.handleChange.bind(this);
