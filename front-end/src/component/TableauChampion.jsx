@@ -1,13 +1,13 @@
 import Champion from './champion';
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 class tableauChampion extends Component {
     constructor(props){
         super(props)
     this.handleChange=this.handleChange.bind(this);
     }
     state = {
-        champions:require('./champ.json'),
+        champions:require('../assets/champ.json'),
         search:""
     }
     handleChange(event){

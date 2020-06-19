@@ -4,8 +4,9 @@ import RadarChart from 'react-svg-radar-chart';
 import 'react-svg-radar-chart/build/css/index.css';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import mastery from "../assets/mastery-7.png"
-import banner from "../assets/lol-maintenance.png"
+import mastery from "../assets/mastery-7.png";
+import banner from "../assets/lol-maintenance.png";
+
 
 
 class conseil_joueur extends Component {

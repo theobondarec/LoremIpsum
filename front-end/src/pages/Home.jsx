@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-import logo from './logo.png';
-import lol from './lol.jpg';
+import logo from '../assets/logo.png';
+import lol from '../assets/lol.jpg';
 
 
 export default class Home extends Component {
