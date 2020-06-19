@@ -15,7 +15,7 @@ class Champion extends Component {
 
     render() { 
         return ( 
-            <div >
+            <div className = "card bg_white mb-3">
                 <Link to={'/Champion/' + this.state.id}>
                 <img src={this.state.Url} alt={this.state.name}/>
                 <h1 style={{color: 'black', fontSize:15, textAlign: 'center', marginTop: 10} }>{this.state.name}</h1>

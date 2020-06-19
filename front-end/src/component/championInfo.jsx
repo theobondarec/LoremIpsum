@@ -26,10 +26,10 @@ class championInfo extends Component {
                         <div className = "card text-white text-center bg-dark mb-3" style={{width: 200}}>
                             <img src={this.state.champions[0].icon} className="rounded mx-auto d-block" alt= {this.state.champions[0].name} style={{marginTop: 40,width: 120, height: 120, }}/>
                             <div className="card-body">
-                                <h1 className="card-title">
+                                <h4 className="card-head">
                                     {this.state.champions[0].name}
-                                    <h5>{this.state.champions[0].title}</h5>
-                                </h1>
+                                    <h5 style = {{ paddingTop : 20 }}>{this.state.champions[0].title}</h5>
+                                </h4>
                             </div>
                         </div>
                         <form>
