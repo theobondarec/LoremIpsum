@@ -62,8 +62,8 @@ class conseil_joueur extends Component {
             }
         ]} size={450} />
             </div>
-         );
+        );
     }
 }
- 
+
 export default conseil_joueur
