@@ -10,14 +10,21 @@ export default class Home extends Component {
         super(props)
     
         this.state = { 
-            conseil:axios.get("http://localhost:8080/").then(response=>this.setState({conseil:response}))
+            conseil:axios.get("http://localhost:8080/").then(response=>this.setState({conseil:response})),
+            pseudo:"",
+            champion:""
         }
-        this.handleClick=this.handleClick.bind(this);
+    this.handleChangePseudo=this.handleChangePseudo.bind(this);
+    this.handleChangeChampion=this.handleChangeChampion.bind(this)
     }
 
-    handleClick(event){
-        console.log(this.state.conseil)
+    handleChangeChampion(event){
+        this.setState({champion:event.target.value})
     }
+    handleChangePseudo(event){
+        this.setState({pseudo:event.target.value})
+    }
+
 
     render() { 
         let message = this.state.conseil.data;
@@ -34,16 +41,14 @@ export default class Home extends Component {
                                 <div className = "card-header">
                                     <a>Conseils par champion</a>
                                 </div>
-                                <form className="form-inline" onSubmit={this.handleClick}>
+                                <form className="form-inline" >
                                     <div className="input-group">
                                         <input type="pseudo" className="form-control" placeholder="Pseudo" aria-label="pseudo" value={this.state.pseudo} onChange={this.handleChangePseudo} />
                                         <input type="champion" className="form-control" placeholder="Champion" aria-label="champion" value={this.state.champion} onChange={this.handleChangeChampion} />
                                         <div class="input-group-append">
-                                            <button className = "btn btn-secondary">
-                                                <Link to={"/Conseil/"+this.state.pseudo+"/"+this.state.champion} className = "text-white">
+                                                <Link to={"/Conseil/"+this.state.pseudo+"/"+this.state.champion} className = "btn btn-secondary text-white">
                                                     Search
                                                 </Link>
-                                            </button>
                                         </div>
                                     </div>
                                 </form>
