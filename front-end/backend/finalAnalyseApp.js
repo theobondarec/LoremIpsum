@@ -24,9 +24,9 @@ function recuperationAccountId(playerName, championName, res) {
     var request = require("request");
 
     var option = {
-      method: 'GET',
-      url: 'https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/'+playerName,
-      qs: {api_key: apiKey}
+        method: 'GET',
+        url: 'https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/'+playerName,
+        qs: {api_key: apiKey}
     };
     
     request(option, (error, response, body) => {
@@ -91,9 +91,9 @@ function recuperationInfoChamp(accountId, championName, ligue, res){
     
     var request = require("request");
     var option = {
-      method: 'GET',
-      url: 'https://euw1.api.riotgames.com/lol/match/v4/matchlists/by-account/'+accountId+'?champion='+championKey+'&queue='+420+'&endIndex=15',
-      qs: {api_key: apiKey}
+        method: 'GET',
+        url: 'https://euw1.api.riotgames.com/lol/match/v4/matchlists/by-account/'+accountId+'?champion='+championKey+'&queue='+420+'&endIndex=15',
+        qs: {api_key: apiKey}
     };
     request(option, (error, response, body) => {
         if (error) throw new Error(error);
@@ -142,7 +142,7 @@ function analyseStats(gameId, accountId, championName ,championKey, histoSize, l
                     var index=0;
                     for(var i = 0; i<10; i++){
                         if(bodyJson.participants[i].championId === championKey){
-                           index = i;
+                            index = i;
                             break;
                         }
                     }
@@ -166,7 +166,7 @@ function analyseStats(gameId, accountId, championName ,championKey, histoSize, l
                     }
                     else{killParticipation = ((killsPerso+assistPerso)/totalKillsTeam[1])*100;
                         if(totalKillsTeam[1] === 0 || killParticipation === Infinity){killParticipation = 0}
-                         else{killParticipation = ((killsPerso+assistPerso)/totalKillsTeam[1])*100;}
+                        else{killParticipation = ((killsPerso+assistPerso)/totalKillsTeam[1])*100;}
                         }
 
                     var role = [0, 0, 0, 0 ,0];
@@ -233,18 +233,18 @@ function analyseStats(gameId, accountId, championName ,championKey, histoSize, l
                 playerStats.ligue =             playerStats.ligue;
                 playerStats.idChampion =        playerStats.idChampion;
                 playerStats.nomChampion =       playerStats.nomChampion;
-                playerStats.loose=              +((playerStats.loose)/div*100).toFixed(2);
-                playerStats.win=                +((playerStats.win)/div*100).toFixed(2);
+                playerStats.loose=              + ((playerStats.loose)/div*100).toFixed(2);
+                playerStats.win=                + ((playerStats.win)/div*100).toFixed(2);
                 playerStats.ban=                playerStats.ban;
-                playerStats.gameDuration=       +((playerStats.gameDuration)/div).toFixed(2);
-                playerStats.assists=            +((playerStats.assists)/div).toFixed(2);
-                playerStats.kill=               +((playerStats.kill)/div).toFixed(2);
-                playerStats.death=              +((playerStats.death)/div).toFixed(2);
-                playerStats.killParticipation=  +((playerStats.killParticipation)/div).toFixed(2);
-                playerStats.totalDamageDealt=   +((playerStats.totalDamageDealt)/div).toFixed(2);
-                playerStats.visionScore=        +((playerStats.visionScore)/div).toFixed(2);
-                playerStats.goldEarned=         +((playerStats.goldEarned)/div).toFixed(2);
-                playerStats.totalMinionKilled=  +((playerStats.totalMinionKilled)/div).toFixed(2);
+                playerStats.gameDuration=       + ((playerStats.gameDuration)/div).toFixed(2);
+                playerStats.assists=            + ((playerStats.assists)/div).toFixed(2);
+                playerStats.kill=               + ((playerStats.kill)/div).toFixed(2);
+                playerStats.death=              + ((playerStats.death)/div).toFixed(2);
+                playerStats.killParticipation=  + ((playerStats.killParticipation)/div).toFixed(2);
+                playerStats.totalDamageDealt=   + ((playerStats.totalDamageDealt)/div).toFixed(2);
+                playerStats.visionScore=        + ((playerStats.visionScore)/div).toFixed(2);
+                playerStats.goldEarned=         + ((playerStats.goldEarned)/div).toFixed(2);
+                playerStats.totalMinionKilled=  + ((playerStats.totalMinionKilled)/div).toFixed(2);
                 playerStats.visionWardsBoughtInGame= +((playerStats.visionWardsBoughtInGame)/div).toFixed(2);
                 playerStats.totalTimeCrowdControlDealt = +((playerStats.totalTimeCrowdControlDealt)/div).toFixed(2);
                 playerStats.mid=                +((playerStats.mid)/div*100).toFixed(2);
@@ -270,14 +270,14 @@ function advices(playerStats, res){
             var adviceMsg = "";
             
             if(playerStats.visionScore >= doc.visionScore/doc.gamePlayed && playerStats.killParticipation >= doc.killParticipation/doc.gamePlayed && playerStats.totalDamageDealt >= doc.totalDamageDealt/doc.gamePlayed && playerStats.totalMinionKilled >= doc.totalMinionKilled/doc.gamePlayed){
-               adviceMsg += "Tu as de meilleurs stats que les personnes de ton niveau, tu devrais passer à la ligue superieur, ce n'est qu'une question de temps. Continue comme ca !!"
+                adviceMsg += "Tu as de meilleurs stats que les personnes de ton niveau, tu devrais passer à la ligue superieur, ce n'est qu'une question de temps. Continue comme ca !!"
             }
             else{
                 adviceMsg += 'Afin de progresser, voici quelques conseils :';
                 var winRate = +(playerStats.win/(playerStats.loose+playerStats.win)*100).toFixed(2);
                 
                 if(doc.mid > doc.jungle && doc.mid >doc.top && doc.mid >doc.support && doc.mid >doc.adc){
-                   adviceMsg += "\n - " + playerStats.nomChampion + " se joue " + playerStats.mid+"% du temps Mid";
+                    adviceMsg += "\n - " + playerStats.nomChampion + " se joue " + playerStats.mid+"% du temps Mid";
                 }
                 else if(doc.top > doc.jungle && doc.top >doc.mid && doc.top >doc.support && doc.top >doc.adc){
                     adviceMsg += "\n - " + playerStats.nomChampion + " se joue " + playerStats.top+"% du temps Top";
@@ -445,7 +445,7 @@ function getStatChampion() {
             if (err) {
                 throw err;
             }
-                            
+            
             doc.loose = +(doc.loose/doc.gamePlayed*100).toFixed(2);
             doc.win = +(doc.win/doc.gamePlayed*100).toFixed(2);
             doc.gameDuration = +(doc.gameDuration/doc.gamePlayed).toFixed(2);
@@ -459,11 +459,11 @@ function getStatChampion() {
             doc.totalMinionKilled = +(doc.totalMinionKilled/doc.gamePlayed).toFixed(2);
             doc.visionWardsBoughtInGame = +(doc.visionWardsBoughtInGame/doc.gamePlayed).toFixed(2);
             doc.totalTimeCrowdControlDealt = +(doc.totalTimeCrowdControlDealt/doc.gamePlayed).toFixed(2);
-            doc.mid = +(doc.mid/doc.gamePlayed*100).toFixed(2);
-            doc.top = +(doc.top/doc.gamePlayed*100).toFixed(2);
-            doc.jungle = +(doc.jungle/doc.gamePlayed*100).toFixed(2);
-            doc.support = +(doc.support/doc.gamePlayed*100).toFixed(2);
-            doc.adc = +(doc.adc/doc.gamePlayed*100).toFixed(2);
+            doc.mid = +(doc.mid/doc.gamePlayed*100).toFixed(2); //done
+            doc.top = +(doc.top/doc.gamePlayed*100).toFixed(2); //done
+            doc.jungle = +(doc.jungle/doc.gamePlayed*100).toFixed(2); //done
+            doc.support = +(doc.support/doc.gamePlayed*100).toFixed(2); //done
+            doc.adc = +(doc.adc/doc.gamePlayed*100).toFixed(2); //done
 
             res.send(doc);
 

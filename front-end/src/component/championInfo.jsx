@@ -5,9 +5,9 @@ class championInfo extends Component {
     constructor(props){
         super (props);
     this.state = {
-        champions:require('../assets/champ.json').filter(c=> c.name ===this.props.match.params.id),
-        infos:axios.get("http://localhost:8080/champion/"+this.props.match.params.id+"/IRON").then(response=>{this.setState({infos:response.data})}),
-        league:"IRON",
+        champions: require('../assets/champ.json').filter(c => c.name === this.props.match.params.id),
+        infos: axios.get("http://localhost:8080/champion/" + this.props.match.params.id + "/IRON").then(response => { this.setState({ infos:response.data }) }),
+        league: "IRON",
 
         }
     this.handleChange = this.handleChange.bind(this);
@@ -15,12 +15,12 @@ class championInfo extends Component {
     }
     handleChange(event){
         this.setState({ league:event.target.value })
-        this.setState({ infos:axios.get("http://localhost:8080/champion/"+this.props.match.params.id+"/"+event.target.value).then(response=>{ this.setState({ infos:response.data }) }) })
+        this.setState({ infos:axios.get("http://localhost:8080/champion/" + this.props.match.params.id + "/"+event.target.value).then(response => { this.setState({ infos:response.data }) }) })
 
     }
     render() { 
         return (  
-            <div className = "container" style ={{ marginTop: 20 }}>
+            <div className = "container" style = {{ marginTop: 20 }}>
                 <div className = "row">
                     <div className = "col-2 ml-4">
                         <div className = "card text-white text-center bg-dark mb-3" style = {{ width: 200 }}>
@@ -61,53 +61,76 @@ class championInfo extends Component {
                         </div>
                     </div>
                     <div className = "col" style = {{ marginLeft: 40 }}>
-                        <main>
-                            <main>
-                                <div className = "container mt-3">
-                                <table className = "table table-dark" >
-                                    <thead>
-                                        <tr>
-                                            <th scope = "col">Winrate</th>
-                                            <th scope = "col">Kill Participation</th>
-                                            <th scope = "col">totalMinionKilled</th>
-                                            <th scope = "col">kill</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope = "row">{ this.state.infos.win }</th>
-                                            <td>{ this.state.infos.killParticipation }</td>
-                                            <td>{ this.state.infos.totalMinionKilled }</td>
-                                            <td>{ this.state.infos.kill }</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <main>                            
+                            <div className = "container mt-3">
+                                <div className = "card bg-dark text-white">
+                                    <table className = "table table-dark" >
+                                        <thead>
+                                            <tr>
+                                                <th scope = "col">Winrate</th>
+                                                <th scope = "col">Average Kill Participation</th>
+                                                <th scope = "col">Average Total Damage Dealt</th>
+                                                <th scope = "col">Average KDA</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope = "row">{ this.state.infos.win }</th>
+                                                <td>{ this.state.infos.killParticipation }</td>
+                                                <td>{ this.state.infos.totalDamageDealt }</td>
+                                                <td>{ this.state.infos.kill } / { this.state.infos.death } / { this.state.infos.assists }</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                            </main>
-                            <main>
-                                <div className = "container mt-3">
-                                <table className = "table table-dark" >
-                                    <thead>
-                                        <tr>
-                                            <th scope = "col">TOP</th>
-                                            <th scope = "col">JNG</th>
-                                            <th scope = "col">MID</th>
-                                            <th scope = "col">ADC</th>
-                                            <th scope = "col">SUP</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope = "row">{ this.state.infos.top }%</th>
-                                            <td>{ this.state.infos.jungle }%</td>
-                                            <td>{ this.state.infos.mid }%</td>
-                                            <td>{ this.state.infos.adc }%</td>
-                                            <td>{ this.state.infos.support }%</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            </div>                 
+                            <div className = "container mt-3">
+                                <div className = "card bg-dark text-white">
+                                    <h4 style = {{ marginLeft: 10 }}>Pick rate by role</h4>
+                                    <table className = "table table-dark" >
+                                        <thead>
+                                            <tr>
+                                                <th scope = "col">TOP</th>
+                                                <th scope = "col">JNG</th>
+                                                <th scope = "col">MID</th>
+                                                <th scope = "col">ADC</th>
+                                                <th scope = "col">SUP</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope = "row">{ this.state.infos.top }%</th>
+                                                <td>{ this.state.infos.jungle }%</td>
+                                                <td>{ this.state.infos.mid }%</td>
+                                                <td>{ this.state.infos.adc }%</td>
+                                                <td>{ this.state.infos.support }%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                            </main>
+                            </div>
+                            <div className = "container mt-3">
+                                <div className = "card bg-dark text-white">
+                                    <table className = "table table-dark" >
+                                        <thead>
+                                            <tr>
+                                                <th scope = "col">Average Minions Killed</th>
+                                                <th scope = "col">Average Gold Earned</th>
+                                                <th scope = "col">Average Vision Score</th>
+                                                <th scope = "col">Average Game Time</th>                                            
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope = "row">{ this.state.infos.totalMinionKilled }</th>
+                                                <td>{ this.state.infos.goldEarned }</td>
+                                                <td>{ this.state.infos.visionScore }</td>
+                                                <td>{ this.state.infos.gameDuration }</td>                                           
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </main>
                     </div>
                 </div>
