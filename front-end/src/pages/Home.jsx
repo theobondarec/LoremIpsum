@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import logo from './logo.png'
-import lol from './lol.jpg'
+import {Link} from 'react-router-dom';
+import logo from './logo.png';
+import lol from './lol.jpg';
 
 
 export default class Home extends Component {
@@ -31,15 +32,20 @@ export default class Home extends Component {
                                 <div className = "card-header">
                                     <a>Conseils par champion</a>
                                 </div>
-                                <div className="input-group">
-                                    <input type="text" class="form-control" placeholder="Pseudo"/>
-                                    <input type="text" class="form-control" placeholder="Champion"/>
-                                    <div class="input-group-append">
-                                        <button class="btn btn-secondary" type="button">Search</button>
+                                <form className="form-inline" onSubmit={this.handleClick}>
+                                    <div className="input-group">
+                                        <input type="pseudo" className="form-control" placeholder="Pseudo" aria-label="pseudo" value={this.state.pseudo} onChange={this.handleChangePseudo} />
+                                        <input type="champion" className="form-control" placeholder="Champion" aria-label="champion" value={this.state.champion} onChange={this.handleChangeChampion} />
+                                        <div class="input-group-append">
+                                            <button className = "btn btn-secondary">
+                                                <Link to={"/Conseil/"+this.state.pseudo+"/"+this.state.champion} className = "text-white">
+                                                    Search
+                                                </Link>
+                                            </button>
+                                        </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
-                            
                         </div>
                     </div>
                 </body>
