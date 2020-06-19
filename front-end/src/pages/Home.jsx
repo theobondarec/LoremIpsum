@@ -46,9 +46,12 @@ export default class Home extends Component {
                                         </div>
                                     </div>
                                 </form>
+<<<<<<< HEAD
                             </div>
                             <div className = "card text-white bg-dark mb-3" style = {{paddingTop: 15, paddingLeft: 15, paddingRight: 15}}>
                                 <p>{message}</p>
+=======
+>>>>>>> FRONT-end-vf
                             </div>
                         </div>
                     </div>
