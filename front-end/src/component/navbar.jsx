@@ -15,10 +15,10 @@ class NavBar extends Component {
                     <li className="btn btn-outline-success">Home</li>
                 </Link>
                 <Link to='/Champion'>
-                    <li className="btn btn-sm btn-outline-secondary">Champion Pages</li>
+                    <li className="btn btn-outline-secondary">Champion Pages</li>
                 </Link>
                 <Link to='/Conseil'>
-                    <li className="btn btn-sm btn-outline-secondary">Conseil</li>
+                    <li className="btn btn-outline-secondary">Conseil</li>
                 </Link>
             </ul>
         </nav>
