@@ -2,8 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Librairy used
 ### `npx create-react-app my-app`
-### `npm install axios bootstrap cors express mongodb react react-router-dom request react-svg-radar-chart react-circular-progressbar`
-
+### `npm install axios bootstrap cors express mongodb react react-router-dom request react-svg-radar-chart react-circular-progressbar `
 
 ## Available Scripts
 
