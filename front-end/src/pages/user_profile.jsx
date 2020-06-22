@@ -7,7 +7,6 @@ class UserProfile extends Component {
     constructor(props){
         super (props);
         this.state = {
-            champions: require('../assets/champ.json'),
             infos: axios.get("http://localhost:8080"+this.props.match.url)
             .then(response => {
                 this.setState({ infos:response.data }); 
@@ -46,16 +45,6 @@ class UserProfile extends Component {
         
         return ( 
             <div class="container-fluid">
-                <div>
-                    <nav className="navbar navbar-light bg-light">
-                        <form className="form-inline" >
-                            <input  className="form-control mr-sm-2" type="pseudo" placeholder="Pseudo" aria-label="Pseudo" value={this.state.pseudo} onChange={this.handleChangePseudo}/>
-                            <Link to={"/Profile/"+this.state.pseudo}>
-                                Search
-                            </Link>
-                        </form>
-                    </nav>
-                </div>
                 <div class="card-columns">
                         {Object.entries(this.state.infos).map(([key, value], index) => (
                             <div class="card mt-3 text-white bg-dark h-10">
@@ -63,7 +52,7 @@ class UserProfile extends Component {
                                     <div><h5 style={{"font-size":"150%"}}>{this.state.infos[index].nameChamp}</h5></div>
                                 </div>
                                 <div class= "d-flex justify-content-center">
-                                    <img class="card-img-top d-flex" src = {"http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/"+this.state.infos[index].nameChamp+".png"}
+                                    <img class="card-img-top d-flex" src = {require('../assets/champ.json').filter(c => c.name === this.state.infos[index].nameChamp)[0].icon}
                                         style={{width: "30%", "margin-bottom":"2%"}}
                                     />
                                 </div>
