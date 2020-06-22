@@ -4,7 +4,6 @@ import RadarChart from 'react-svg-radar-chart';
 import 'react-svg-radar-chart/build/css/index.css';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import mastery from "../assets/mastery-7.png";
 import banner from "../assets/lol-maintenance.png";
 
 
@@ -46,12 +45,28 @@ class conseil_joueur extends Component {
         console.log(this.state.LigueStats)
     }
     render() { 
+        var role=""
+        if(this.state.PlayerStats.support>this.state.PlayerStats.mid && this.state.PlayerStats.support>this.state.PlayerStats.jungle && this.state.PlayerStats.support>this.state.PlayerStats.top && this.state.PlayerStats.support>this.state.PlayerStats.adc){
+            role="support"
+        }
+        if(this.state.PlayerStats.adc>this.state.PlayerStats.mid && this.state.PlayerStats.adc>this.state.PlayerStats.jungle && this.state.PlayerStats.adc>this.state.PlayerStats.top && this.state.PlayerStats.adc>this.state.PlayerStats.support){
+            role="bot"
+        }
+        if(this.state.PlayerStats.mid>this.state.PlayerStats.support && this.state.PlayerStats.mid>this.state.PlayerStats.jungle && this.state.PlayerStats.mid>this.state.PlayerStats.top && this.state.PlayerStats.mid>this.state.PlayerStats.adc){
+            role="mid"
+        }
+        if(this.state.PlayerStats.jungle>this.state.PlayerStats.mid && this.state.PlayerStats.jungle>this.state.PlayerStats.support && this.state.PlayerStats.jungle>this.state.PlayerStats.top && this.state.PlayerStats.jungle>this.state.PlayerStats.adc){
+            role="jungle"
+        }
+        if(this.state.PlayerStats.top>this.state.PlayerStats.mid && this.state.PlayerStats.top>this.state.PlayerStats.jungle && this.state.PlayerStats.top>this.state.PlayerStats.support && this.state.PlayerStats.top>this.state.PlayerStats.adc){
+            role="top"
+        }
         return (
             <div className="container-fluid" style={{marginTop: 20}}>
                 <div className="row">
                     <div className="col-2">
                         <div className = "card text-white text-center bg-dark mb-3" style={{width: 200}}>
-                            <img src={this.state.champion[0].icon} className="rounded mx-auto d-block img-fluid" alt= {"champion"} style={{marginTop: 40,width: 120, height: 120, }}/>
+                            <img src={this.state.champion[0].icon} className="rounded mx-auto d-block" alt= {"champion"} style={{marginTop: 40,width: 120, height: 120, }}/>
                             <div className="card-body">
                                 <h2 className="card-title">
                                     {this.state.pseudos}
@@ -61,7 +76,9 @@ class conseil_joueur extends Component {
                             </div>
                         </div> 
                         <div className = "card text-white bg-dark" style={{width: 200, marginTop:20}}>
-                                <img className="img-auto" src={mastery} alt="mastery" />
+                            <img src={"https://ultimate-bravery.net/images/roles/"+role+"_icon.png"} className="rounded mx-auto d-block"/>
+                            <h3 className="card-title">{this.state.champion[0].tags[0]}</h3>
+                            <h3 className="card-title">{this.state.champion[0].tags[1]}</h3>
                         </div>
                     </div>
                     <div className="col-5" style={{marginLeft: 40}}>
