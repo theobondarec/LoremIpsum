@@ -82,7 +82,7 @@ class conseil_joueur extends Component {
                         </div>
                         <h5> Conseil:</h5>
                         <body>
-                            <p>
+                            <p className="text" style={{whiteSpace:"pre-wrap"}}>
                                 {this.state.LigueStats.advice}
                             </p>
                         </body>
