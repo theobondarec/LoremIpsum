@@ -7,7 +7,8 @@ import championInfo from './component/championInfo'
 import Home from './pages/Home'
 import Conseil from './pages/conseil'
 import conseil_joueur from './pages/conseil_joueur'
-
+import Profile from './pages/Profile'
+import UserProfile from'./pages/user_profile'
 function App() {
   
   return (
@@ -20,6 +21,8 @@ function App() {
             <Route path="/Champion" exact component={TableauChampion}/>
             <Route path="/Conseil" exact component={Conseil}/>
             <Route path="/Conseil/:pseudo/:champion" exact component={conseil_joueur}/>
+            <Route path="/Profile" exact component={Profile}/>
+            <Route path="/Profile/:pseudo" exact component={UserProfile}/>
 
           </Switch>
         </Router>
