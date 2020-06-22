@@ -16,9 +16,11 @@ class Conseil extends Component {
         champions:require('../assets/champ.json')
     }
     handleChangeChampion(event){
+        //barre de recherche champion
         this.setState({champion:event.target.value})
     }
     handleChangePseudo(event){
+        //barre de recherche Pseudo
         this.setState({pseudo:event.target.value})
     }
     

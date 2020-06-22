@@ -39,6 +39,7 @@ class conseil_joueur extends Component {
     }
     
     handleClick(event){
+        //utilité pour debug créer button utilisant handleClick
         console.log(this.state.ChampionStats)
         console.log(this.state.notes)
         console.log(this.state.PlayerStats)
