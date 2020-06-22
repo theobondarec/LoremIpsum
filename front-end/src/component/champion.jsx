@@ -3,14 +3,11 @@ import {Link} from 'react-router-dom';
 
 class Champion extends Component {
     state = {
+        //props= champion passé en props par le composant tableauChampion récupération des infos
         Url:this.props.champion.icon,
         id:this.props.champion.name,
         name:this.props.champion.name,
-        hp:this.props.champion.stats.hp
     };
-    handleSelection = id =>{
-        console.log(id,this)
-    }
 
     render() { 
         return ( 

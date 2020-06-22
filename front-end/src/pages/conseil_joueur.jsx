@@ -39,6 +39,7 @@ class conseil_joueur extends Component {
     }
     
     handleClick(event){
+        //utilité pour debug créer button utilisant handleClick
         console.log(this.state.ChampionStats)
         console.log(this.state.notes)
         console.log(this.state.PlayerStats)
@@ -66,7 +67,7 @@ class conseil_joueur extends Component {
                     <div className="col-5" style={{marginLeft: 40}}>
                         <img src={banner} alt={"header"} className="img-fluid"/>
                         <div position="center">
-                            <p className="h5" position="center">Analyse des performances</p>
+                            <p className="h5" position="center" className="h3">Analyse des performances</p>
                             <RadarChart captions={this.captions} data={[
                                             {
                                             data:{
@@ -80,25 +81,25 @@ class conseil_joueur extends Component {
                                                 },
                                         ]} size={300} />
                         </div>
-                        <h5> Conseil:</h5>
+                        <h3> Conseil:</h3>
                         <body>
-                            <p>
+                            <p className="text" style={{whiteSpace:"pre-wrap"}}>
                                 {this.state.LigueStats.advice}
                             </p>
                         </body>
                         <table className="table table-dark" >
                             <thead>
                                 <tr>
-                                    <th scope="col">{this.state.pseudos}</th>
-                                    <th scope="col">Stats</th>
-                                    <th scope="col">moyenne en {this.state.search}</th>
+                                    <th scope="col" className="h3">{this.state.pseudos}</th>
+                                    <th scope="col" className="h3">Stats</th>
+                                    <th scope="col" className="h3">moyenne en {this.state.search}</th>
                                 </tr>
                             </thead>
                         </table>
                         <table className="table table-dark">
                             <thead>
                                 <tr>
-                                    <th scope="col">Stats de combat</th>
+                                    <th scope="col" className="h3">Stats de combat</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -142,7 +143,7 @@ class conseil_joueur extends Component {
                         <table className="table table-dark">
                             <thead>
                                 <tr>
-                                    <th scope="col">Stats d'économie</th>
+                                    <th scope="col" className="h3">Stats d'économie</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -161,7 +162,7 @@ class conseil_joueur extends Component {
                         <table className="table table-dark" >
                             <thead>
                                 <tr>                                    
-                                    <th scope="col-4">Stats de vision</th>
+                                    <th scope="col-4" className="h3">Stats de vision</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -216,7 +217,6 @@ class conseil_joueur extends Component {
                                 </select>
                         </form>
                     </div>
-                    <button onClick={this.handleClick}>CLICKKKK</button>
                 </div>
             </div>
          );

@@ -3,6 +3,7 @@ import axios from 'axios';
 
 class championInfo extends Component {
     constructor(props){
+        //props: récupération du nom de champion dans l'url
         super (props);
     this.state = {
         champions: require('../assets/champ.json').filter(c => c.name === this.props.match.params.id),
