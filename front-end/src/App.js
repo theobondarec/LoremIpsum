@@ -1,9 +1,9 @@
 import React from 'react';
-import NavBar from './component/navbar'
+import NavBar from './pages/navbar'
 import './App.css';
-import TableauChampion from './component/TableauChampion';
+import TableauChampion from './pages/TableauChampion';
 import {BrowserRouter as Router, Switch,Route } from 'react-router-dom';
-import championInfo from './component/championInfo'
+import championInfo from './pages/championInfo'
 import Home from './pages/Home'
 import Conseil from './pages/conseil'
 import conseil_joueur from './pages/conseil_joueur'
