@@ -440,11 +440,22 @@ function getStatChampion() {
         var champName = req.params.champ;
         var league = req.params.leag;
         
+        
+        
+        var champNameToLower = champName.toLowerCase();
+        var correctChampionName = champNameToLower[0].toUpperCase();
+        for(var i =1; i< champName.length; i++){
+            correctChampionName += champName[i];
+        }
+        
+        
+        
+        
         console.log(champName + league);
     
         const collection = client.db("CHAMPIONS").collection(league);
 
-        collection.findOne( {"nomChampion": champName }, (err, doc) => {
+        collection.findOne( {"nomChampion": correctChampionName }, (err, doc) => {
             if (err) {
                 throw err;
             }
@@ -527,11 +538,12 @@ function getAccountId(nameRequest, res){
         if (error) throw new Error(error);
         var bodyJson = JSON.parse(body);
         
-        if( bodyJson !== undefined){
+        if( bodyJson.accountId !== undefined){
             gameIdArray = [];
             champIdArray = [];
             getGameId(bodyJson.accountId, 0, 0, nameRequest, res);
         } else{
+            running = false;
             console.log('Bad request at  : ' + option.url);
         }   
     });
@@ -566,26 +578,32 @@ function getGameId(accountId, begIndex, totalIndex, nameRequest, res){
                 }, 500);
             } else {
                 console.log("Votre profil prendra " + (totalIndex*1.2)/60 + " minutes à être analysé.");
-                setTimeout( () => {
-                    gameIdArray.forEach( (elem, index) => {
-                        setTimeout( () => {
-                            console.log(elem + ' : ' + champIdArray[index] + '                game : '  + index + '/' + totalIndex + ' state : ' + running);
-                            analyseGame(elem, champIdArray[index], nameRequest);
-                            
-                            if( index+1 === totalIndex) {
-                                setTimeout( () => {
-                                    console.log('Calculate final data');
-                                    running = false;
-                                    sendStats(nameRequest, res);
-                                }, 1500);
-                            }
-                        }, index * 1200);
-                    });
-                }, (begIndex+200)*12);
+                if(totalIndex === 0){
+                    running = false;
+                }
+                else{
+                    setTimeout( () => {
+                        gameIdArray.forEach( (elem, index) => {
+                            setTimeout( () => {
+                                console.log(elem + ' : ' + champIdArray[index] + '                game : '  + index + '/' + totalIndex + ' state : ' + running);
+                                analyseGame(elem, champIdArray[index], nameRequest);
+
+                                if( index+1 === totalIndex) {
+                                    setTimeout( () => {
+                                        console.log('Calculate final data');
+                                        running = false;
+                                        sendStats(nameRequest, res);
+                                    }, 1500);
+                                }
+                            }, index * 1200);
+                        });
+                    }, (begIndex+200)*12);
+                }
             }
         }
         else {
             console.log('Bad request at  : ' + option.url);
+            running = false;
         }
     });
 }
