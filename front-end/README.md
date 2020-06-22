@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Librairy used
+### `npx create-react-app my-app`
+### `npm install axios bootstrap cors express mongodb react react-router-dom request react-svg-radar-chart react-circular-progressbar`
+
+
 ## Available Scripts
 
 In the project directory, you can run:
