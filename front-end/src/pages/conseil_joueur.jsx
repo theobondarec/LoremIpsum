@@ -44,7 +44,7 @@ class conseil_joueur extends Component {
         console.log(this.state.PlayerStats)
         console.log(this.state.LigueStats)
     }
-    render() { 
+    render() {
         var role=""
         if(this.state.PlayerStats.support>this.state.PlayerStats.mid && this.state.PlayerStats.support>this.state.PlayerStats.jungle && this.state.PlayerStats.support>this.state.PlayerStats.top && this.state.PlayerStats.support>this.state.PlayerStats.adc){
             role="support"
@@ -66,7 +66,7 @@ class conseil_joueur extends Component {
                 <div className="row">
                     <div className="col-2">
                         <div className = "card text-white text-center bg-dark mb-3" style={{width: 200}}>
-                            <img src={this.state.champion[0].icon} className="rounded mx-auto d-block" alt= {"champion"} style={{marginTop: 40,width: 120, height: 120, }}/>
+                            <img src={this.state.champion[0].icon} className="rounded mx-auto d-block img-fluid" alt= {"champion"} style={{marginTop: 40,width: 120, height: 120, }}/>
                             <div className="card-body">
                                 <h2 className="card-title">
                                     {this.state.pseudos}
@@ -77,8 +77,12 @@ class conseil_joueur extends Component {
                         </div> 
                         <div className = "card text-white bg-dark" style={{width: 200, marginTop:20}}>
                             <img src={"https://ultimate-bravery.net/images/roles/"+role+"_icon.png"} className="rounded mx-auto d-block"/>
-                            <h3 className="card-title">{this.state.champion[0].tags[0]}</h3>
-                            <h3 className="card-title">{this.state.champion[0].tags[1]}</h3>
+                            <div class="d-flex justify-content-center">
+                                <h3 className="card-title">{this.state.champion[0].tags[0]}</h3>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <h3 className="card-title">{this.state.champion[0].tags[1]}</h3>
+                            </div>
                         </div>
                     </div>
                     <div className="col-5" style={{marginLeft: 40}}>
@@ -99,8 +103,8 @@ class conseil_joueur extends Component {
                                         ]} size={300} />
                         </div>
                         <h3> Conseil:</h3>
-                        <body>
-                            <p className="text" style={{whiteSpace:"pre-wrap"}}>
+                        <body style={{"padding-top":"0px"}}>
+                            <p className="text text-white bg-dark" style={{"whiteSpace":"pre-wrap"}}>
                                 {this.state.LigueStats.advice}
                             </p>
                         </body>
@@ -131,9 +135,9 @@ class conseil_joueur extends Component {
                                     <td >{this.state.ChampionStats.kill}</td>
                                 </tr>
                                 <tr>
-                                    <td >{this.state.PlayerStats.assists/this.state.PlayerStats.death}</td>
+                                    <td >{+(this.state.PlayerStats.assists/this.state.PlayerStats.death).toFixed(2)}</td>
                                     <td >KDA</td>
-                                    <td >{(this.state.ChampionStats.kill+this.state.ChampionStats.assists)/this.state.ChampionStats.death}</td>
+                                    <td >{+((this.state.ChampionStats.kill+this.state.ChampionStats.assists)/this.state.ChampionStats.death).toFixed(2)}</td>
                                 </tr>
                                 <tr>
                                     <td >{this.state.PlayerStats.killParticipation}</td>
@@ -146,9 +150,9 @@ class conseil_joueur extends Component {
                                     <td >{this.state.ChampionStats.totalDamageDealt}</td>
                                 </tr>
                                 <tr>
-                                    <td >{this.state.PlayerStats.totalDamageDealt/this.state.PlayerStats.gameDuration}</td>
+                                    <td >{+(this.state.PlayerStats.totalDamageDealt/this.state.PlayerStats.gameDuration).toFixed(2)}</td>
                                     <td >DMG par min</td>
-                                    <td >{this.state.ChampionStats.totalDamageDealt/this.state.ChampionStats.gameDuration}</td>
+                                    <td >{+(this.state.ChampionStats.totalDamageDealt/this.state.ChampionStats.gameDuration).toFixed(2)}</td>
                                 </tr>
                                 <tr>
                                     <td>{this.state.PlayerStats.totalTimeCrowdControlDealt}</td>
@@ -170,9 +174,9 @@ class conseil_joueur extends Component {
                                     <td>{this.state.ChampionStats.totalMinionKilled}</td>
                                 </tr>
                                 <tr>
-                                    <td>{this.state.PlayerStats.totalMinionKilled/this.state.PlayerStats.gameDuration}</td>
+                                    <td>{+(this.state.PlayerStats.totalMinionKilled/this.state.PlayerStats.gameDuration).toFixed(2)}</td>
                                     <td>cs/min</td>
-                                    <td>{this.state.ChampionStats.totalMinionKilled/this.state.ChampionStats.gameDuration}</td>
+                                    <td>{+(this.state.ChampionStats.totalMinionKilled/this.state.ChampionStats.gameDuration).toFixed(2)}</td>
                                 </tr>
                             </tbody>
                         </table>
