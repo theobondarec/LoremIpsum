@@ -7,7 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### `npm init --yes`
 
 #### etape 2 :
-extraire la partie front end du git et la copier coller dans le dossier my-app créé précédemment
+extraire la partie front end du git et la copier coller les fichiers dans le dossier my-app créé précédemment
 
 ## Available Scripts
 
