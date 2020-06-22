@@ -3,11 +3,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 #### etape 1 :
 
 ### `npx create-react-app my-app`
+### `cd my-app`
 ### `npm install axios bootstrap cors express mongodb react react-router-dom request react-svg-radar-chart react-circular-progressbar `
 ### `npm init --yes`
 
 #### etape 2 :
 extraire la partie Website du git et la copier coller les fichiers dans le dossier my-app créé précédemment
+
+#### etape 3 :
+### `node finalAnalyseApp.js` depuis backend
+
+### `npm start`  depuis my-app
+
 
 ## Available Scripts
 
