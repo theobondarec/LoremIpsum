@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import conseil_joueur from './conseil_joueur';
+import conseil_joueur from './conseil_joueur';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 
@@ -13,13 +13,15 @@ class Conseil extends Component {
     state = { 
         pseudo:"",
         champion:"",
+        champions:require('../assets/champ.json')
     }
-    handleChangeChampion(event) {
-        this.setState ({ champion:event.target.value })
+    handleChangeChampion(event){
+        this.setState({champion:event.target.value})
     }
-    handleChangePseudo (event) {
-        this.setState({ pseudo:event.target.value })
+    handleChangePseudo(event){
+        this.setState({pseudo:event.target.value})
     }
+    
 
 
     render() { 
