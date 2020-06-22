@@ -379,7 +379,7 @@ function advices(playerStats, res){
             if (err) {
                 throw err;
             }
-            StatsChall.killParticipation = +(StatsChall.killParticipation/StatsChall.gamePlayed).toFixed(2); //en%
+            StatsChall.killParticipation = +(StatsChall.killParticipation/StatsChall.gamePlayed).toFixed(2);
             StatsChall.totalDamageDealt = +(StatsChall.totalDamageDealt/StatsChall.gamePlayed).toFixed(2);
             StatsChall.visionScore = +(StatsChall.visionScore/StatsChall.gamePlayed).toFixed(2);
             StatsChall.goldEarned = +(StatsChall.goldEarned/StatsChall.gamePlayed).toFixed(2);           
@@ -852,7 +852,7 @@ function sendStats(nameRequest, res){
             el.totalTimeCrowdControlDealt = +(el.totalTimeCrowdControlDealt/el.gamePlayed).toFixed(2);
             el.totalMinionKilled = +(el.totalMinionKilled/el.gamePlayed).toFixed(2);
             
-            el.KDA = ((el.kill+el.assists)/el.death).toFixed(2);
+            el.KDA = +((el.kill+el.assists)/el.death).toFixed(2);
             
             response.push(el);
         });
@@ -871,7 +871,7 @@ client.connect(err => {
     if (err) {
         console.log('Sorry unable to connect to MongoDB Error:', err);
     } else {
-        console.log('Connected successfully to server', uri);
+        console.log('Connected successfully to server');
         app.get('/Conseil/:invocateurName/:champion',(req,res)=> {
             playerStats ={
                 "accountId":0,
