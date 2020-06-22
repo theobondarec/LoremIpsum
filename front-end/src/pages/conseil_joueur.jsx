@@ -135,7 +135,7 @@ class conseil_joueur extends Component {
                                     <td >{this.state.ChampionStats.kill}</td>
                                 </tr>
                                 <tr>
-                                    <td >{+(this.state.PlayerStats.assists/this.state.PlayerStats.death).toFixed(2)}</td>
+                                    <td >{+((this.state.PlayerStats.assists+this.state.ChampionStats.kill)/this.state.PlayerStats.death).toFixed(2)}</td>
                                     <td >KDA</td>
                                     <td >{+((this.state.ChampionStats.kill+this.state.ChampionStats.assists)/this.state.ChampionStats.death).toFixed(2)}</td>
                                 </tr>
@@ -150,9 +150,9 @@ class conseil_joueur extends Component {
                                     <td >{this.state.ChampionStats.totalDamageDealt}</td>
                                 </tr>
                                 <tr>
-                                    <td >{+(this.state.PlayerStats.totalDamageDealt/this.state.PlayerStats.gameDuration).toFixed(2)}</td>
+                                    <td >{+(this.state.PlayerStats.totalDamageDealt/this.state.PlayerStats.gameDuration*60).toFixed(2)}</td>
                                     <td >DMG par min</td>
-                                    <td >{+(this.state.ChampionStats.totalDamageDealt/this.state.ChampionStats.gameDuration).toFixed(2)}</td>
+                                    <td >{+(this.state.ChampionStats.totalDamageDealt/this.state.ChampionStats.gameDuration*60).toFixed(2)}</td>
                                 </tr>
                                 <tr>
                                     <td>{this.state.PlayerStats.totalTimeCrowdControlDealt}</td>
@@ -174,9 +174,9 @@ class conseil_joueur extends Component {
                                     <td>{this.state.ChampionStats.totalMinionKilled}</td>
                                 </tr>
                                 <tr>
-                                    <td>{+(this.state.PlayerStats.totalMinionKilled/this.state.PlayerStats.gameDuration).toFixed(2)}</td>
+                                    <td>{+(this.state.PlayerStats.totalMinionKilled/this.state.PlayerStats.gameDuration*60).toFixed(2)}</td>
                                     <td>cs/min</td>
-                                    <td>{+(this.state.ChampionStats.totalMinionKilled/this.state.ChampionStats.gameDuration).toFixed(2)}</td>
+                                    <td>{+(this.state.ChampionStats.totalMinionKilled/this.state.ChampionStats.gameDuration*60).toFixed(2)}</td>
                                 </tr>
                             </tbody>
                         </table>
