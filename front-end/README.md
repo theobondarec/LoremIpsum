@@ -1,11 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## etape test site web en local:
-# etape 1 :
+#### etape 1 :
 ### `npx create-react-app my-app`
 ### `npm install axios bootstrap cors express mongodb react react-router-dom request react-svg-radar-chart react-circular-progressbar `
 ### `npm init --yes`
-# etape 2 :
+#### etape 2 :
 
 ## Available Scripts
 
