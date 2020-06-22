@@ -76,7 +76,7 @@ class championInfo extends Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope = "row">{ this.state.infos.win }</th>
+                                                <td>{ this.state.infos.win }</td>
                                                 <td>{ this.state.infos.killParticipation }</td>
                                                 <td>{ this.state.infos.totalDamageDealt }</td>
                                                 <td>{ this.state.infos.kill } / { this.state.infos.death } / { this.state.infos.assists }</td>
@@ -100,7 +100,7 @@ class championInfo extends Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope = "row">{ this.state.infos.top }%</th>
+                                                <td>{ this.state.infos.top }%</td>
                                                 <td>{ this.state.infos.jungle }%</td>
                                                 <td>{ this.state.infos.mid }%</td>
                                                 <td>{ this.state.infos.adc }%</td>
@@ -123,7 +123,7 @@ class championInfo extends Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope = "row">{ this.state.infos.totalMinionKilled }</th>
+                                                <td>{ this.state.infos.totalMinionKilled }</td>
                                                 <td>{ this.state.infos.goldEarned }</td>
                                                 <td>{ this.state.infos.visionScore }</td>
                                                 <td>{ this.state.infos.gameDuration }</td>                                           
