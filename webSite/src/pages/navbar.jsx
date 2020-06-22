@@ -12,16 +12,16 @@ class NavBar extends Component {
             </h3>
             <ul>
                 <Link to='/'>
-                    <li className="btn btn-outline-success">Home</li>
+                    <li className="btn btn-outline-success">Acceuil</li>
                 </Link>
                 <Link to='/Champion'>
-                    <li className="btn btn-outline-secondary">Champion Pages</li>
+                    <li className="btn btn-outline-secondary">Page Champions</li>
                 </Link>
                 <Link to='/Profile'>
-                    <li className="btn btn-outline-secondary">Profile</li>
+                    <li className="btn btn-outline-secondary">Profil</li>
                 </Link>
                 <Link to='/Conseil'>
-                    <li className="btn btn-outline-secondary">Conseil</li>
+                    <li className="btn btn-outline-secondary">Conseils</li>
                 </Link>
             </ul>
         </nav>
