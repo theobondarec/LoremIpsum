@@ -76,7 +76,7 @@ class championInfo extends Component {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>{ this.state.infos.win }</td>
+                                                <td>{ this.state.infos.win}%</td>
                                                 <td>{ this.state.infos.killParticipation }</td>
                                                 <td>{ this.state.infos.totalDamageDealt }</td>
                                                 <td>{ this.state.infos.kill } / { this.state.infos.death } / { this.state.infos.assists }</td>
