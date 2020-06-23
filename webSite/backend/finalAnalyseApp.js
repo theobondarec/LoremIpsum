@@ -877,6 +877,7 @@ function sendStats(nameRequest, res){
         
         res.send(response);
     });
+    running = false;
 }
 ///ENDAnalysePlayerProfil///
 
