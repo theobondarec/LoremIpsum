@@ -28,7 +28,6 @@ class conseil_joueur extends Component {
             Vision:'Vision',
             killParticipation:'kill participation'
         };
-        this.handleClick=this.handleClick.bind(this);
         this.handleChange=this.handleChange.bind(this);
     }
     handleChange(event){
@@ -37,13 +36,6 @@ class conseil_joueur extends Component {
 
     }
     
-    handleClick(event){
-        //utilité pour debug créer button utilisant handleClick
-        console.log(this.state.ChampionStats)
-        console.log(this.state.notes)
-        console.log(this.state.PlayerStats)
-        console.log(this.state.LigueStats)
-    }
     render() {
         var role=""
         if(this.state.PlayerStats.support>this.state.PlayerStats.mid && this.state.PlayerStats.support>this.state.PlayerStats.jungle && this.state.PlayerStats.support>this.state.PlayerStats.top && this.state.PlayerStats.support>this.state.PlayerStats.adc){
@@ -76,7 +68,7 @@ class conseil_joueur extends Component {
                             </div>
                         </div> 
                         <div className = "card text-white bg-dark" style={{width: 200, marginTop:20}}>
-                            <img src={"https://ultimate-bravery.net/images/roles/"+role+"_icon.png"} className="rounded mx-auto d-block"/>
+                            <img src={"https://ultimate-bravery.net/images/roles/"+role+"_icon.png"} className="rounded mx-auto d-block" alt=""/>
                             <div class="d-flex justify-content-center">
                                 <h3 className="card-title">{this.state.champion[0].tags[0]}</h3>
                             </div>
@@ -88,7 +80,7 @@ class conseil_joueur extends Component {
                     <div className="col-5" style={{marginLeft: 40}}>
                         <img src={banner} alt={"header"} className="img-fluid"/>
                         <div position="center">
-                            <p className="h5" position="center" className="h3">Analyse des performances</p>
+                            <p className="h5" position="center">Analyse des performances</p>
                             <RadarChart captions={this.captions} data={[
                                             {
                                             data:{

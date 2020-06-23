@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-import {Link} from 'react-router-dom';
 import axios from 'axios';
 
 class UserProfile extends Component {
@@ -10,39 +9,15 @@ class UserProfile extends Component {
             infos: axios.get("http://localhost:8080"+this.props.match.url)
             .then(response => {
                 this.setState({ infos:response.data }); 
-                this.setState({ gameInfos:response.data[0] });
             }),
-            gameInfos: {},
-            items: [],
             }
         
         this.handleChangePseudo=this.handleChangePseudo.bind(this);
-        this.handleClick=this.handleClick.bind(this);
     }
     handleChangePseudo (event) {
         this.setState({ pseudo:event.target.value })
-    }
-    handleClick(event){
-        console.log(this.state.infos.length)
-        console.log(this.state.items.length)
-    }     
+    }  
     render() {
-/*        this.setState({ 
-            items: this.state.items.concat(this.state.infos[0])
-        });
-        const elements = ['one', 'two', 'three'];
-        var i = 0;*/
-        
-        var items = [];
-        
-        for( var i = 0; i < this.state.infos.length/2; i++){
-            items.push(i);
-        }
-        
-        
-        //Object.entries(this.state.infos).map(([key, value], index) => ( items.push(value)));
-        
-        
         return ( 
             <div class="container-fluid">
                 <div class="card-columns">
@@ -52,7 +27,7 @@ class UserProfile extends Component {
                                     <div><h5 style={{"font-size":"150%"}}>{this.state.infos[index].nameChamp}</h5></div>
                                 </div>
                                 <div class= "d-flex justify-content-center">
-                                    <img class="card-img-top d-flex" src = {require('../assets/champ.json').filter(c => c.name === this.state.infos[index].nameChamp)[0].icon}
+                                    <img class="card-img-top d-flex" alt="" src = {require('../assets/champ.json').filter(c => c.name === this.state.infos[index].nameChamp)[0].icon}
                                         style={{width: "30%", "margin-bottom":"2%"}}
                                     />
                                 </div>
