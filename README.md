@@ -9,6 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 #### étape 2 :
 extraire la partie Website du git et la copier coller les fichiers dans le dossier my-app créé précédemment
+## ne pas oublier de mettre le fichier .env (avec les clés d'api, de bdd) dans la partie bakcend
 
 #### étape 3 :
 ### `node finalAnalyseApp.js` depuis backend
