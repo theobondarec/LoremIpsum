@@ -39,7 +39,7 @@ export default class Home extends Component {
                         <div className = "col-3">
                             <div className = "card text-white bg-dark mb-3" style = {{padding: 10}}>
                                 <div className = "card-header">
-                                    <a>Conseils par champion</a>
+                                    <p>Conseils par champion</p>
                                 </div>
                                 <form className="form-inline" >
                                     <div className="input-group">
