@@ -16,6 +16,13 @@ extraire la partie Website du git et la copier coller les fichiers dans le dossi
 
 ### `npm start`  depuis my-app
 
+## Afin de modifier la base de donnée
+utiliser les fonctions:
+summonerIdApp.js => sert à recuperer/stocker les classements par ligue
+accountIdApp.js => sert à recuperer/stocker les infos d'un compte utilisateur par ligue (accountId/summonerId)
+getGameId.js => sert à recuperer/stocker des identifiants de partie par ligue (gameId)
+gameIdApp.js => sert à analyser une game, recuperation des stats par champion et par ligue
+
 
 ## Available Scripts
 
