@@ -71,7 +71,7 @@ class conseil_joueur extends Component {
                                 <h2 className="card-title">
                                     {this.state.pseudos}
                                     <p className="h5">{this.state.PlayerStats.ligue}</p>
-                                    <p className="h5">{this.state.PlayerStats.win}%</p>
+                                    <p className="h5">{this.state.PlayerStats.nomChampion}</p>
                                 </h2>
                             </div>
                         </div> 
