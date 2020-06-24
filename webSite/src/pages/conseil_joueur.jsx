@@ -93,6 +93,19 @@ class conseil_joueur extends Component {
                                 {this.state.LigueStats.advice}
                             </p>
                         </body>
+                        <form class="d-flex flex-row-reverse">
+                            <select value={this.state.league} onChange={this.handleChange} className="btn btn-secondary dropdown-toggle bg-dark">
+                                    <option value="IRON">IRON</option>
+                                    <option value="BRONZE">BRONZE</option>
+                                    <option value="SILVER">SILVER</option>
+                                    <option value="GOLD">GOLD</option>
+                                    <option value="PLATINUM">PLATINIUM</option>
+                                    <option value="DIAMOND">DIAMOND</option>
+                                    <option value="MASTER">MASTER</option>
+                                    <option value="GRANDMASTER">GRANDMASTER</option>
+                                    <option value="CHALLENGER">CHALLENGER</option>
+                                </select>
+                        </form>
                         <table className="table table-dark" >
                             <thead>
                                 <tr>
@@ -209,19 +222,6 @@ class conseil_joueur extends Component {
                                 </div> 
                             </div>
                         </div>
-                        <form >
-                            <select value={this.state.league} onChange={this.handleChange} className="btn btn-secondary dropdown-toggle bg-dark">
-                                    <option value="IRON">IRON</option>
-                                    <option value="BRONZE">BRONZE</option>
-                                    <option value="SILVER">SILVER</option>
-                                    <option value="GOLD">GOLD</option>
-                                    <option value="PLATINUM">PLATINIUM</option>
-                                    <option value="DIAMOND">DIAMOND</option>
-                                    <option value="MASTER">MASTER</option>
-                                    <option value="GRANDMASTER">GRANDMASTER</option>
-                                    <option value="CHALLENGER">CHALLENGER</option>
-                                </select>
-                        </form>
                         <div>
                             <p className="h5" position="center" className="h3">Analyse des performances</p>
                             <RadarChart captions={this.captions} data={[
