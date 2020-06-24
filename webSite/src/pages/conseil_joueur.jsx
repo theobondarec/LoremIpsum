@@ -28,6 +28,7 @@ class conseil_joueur extends Component {
             Vision:'Vision',
             killParticipation:'kill participation'
         };
+        this.handleClick=this.handleClick.bind(this);
         this.handleChange=this.handleChange.bind(this);
     }
     handleChange(event){
@@ -36,6 +37,13 @@ class conseil_joueur extends Component {
 
     }
     
+    handleClick(event){
+        //utilité pour debug créer button utilisant handleClick
+        console.log(this.state.ChampionStats)
+        console.log(this.state.notes)
+        console.log(this.state.PlayerStats)
+        console.log(this.state.LigueStats)
+    }
     render() {
         var role=""
         if(this.state.PlayerStats.support>this.state.PlayerStats.mid && this.state.PlayerStats.support>this.state.PlayerStats.jungle && this.state.PlayerStats.support>this.state.PlayerStats.top && this.state.PlayerStats.support>this.state.PlayerStats.adc){
@@ -68,7 +76,7 @@ class conseil_joueur extends Component {
                             </div>
                         </div> 
                         <div className = "card text-white bg-dark" style={{width: 200, marginTop:20}}>
-                            <img src={"https://ultimate-bravery.net/images/roles/"+role+"_icon.png"} className="rounded mx-auto d-block" alt=""/>
+                            <img src={"https://ultimate-bravery.net/images/roles/"+role+"_icon.png"} className="rounded mx-auto d-block"/>
                             <div class="d-flex justify-content-center">
                                 <h3 className="card-title">{this.state.champion[0].tags[0]}</h3>
                             </div>
@@ -76,24 +84,9 @@ class conseil_joueur extends Component {
                                 <h3 className="card-title">{this.state.champion[0].tags[1]}</h3>
                             </div>
                         </div>
-                    </div>
+                    </div>            
                     <div className="col-5" style={{marginLeft: 40}}>
                         <img src={banner} alt={"header"} className="img-fluid"/>
-                        <div position="center">
-                            <p className="h5" position="center">Analyse des performances</p>
-                            <RadarChart captions={this.captions} data={[
-                                            {
-                                            data:{
-                                                    Damage:(this.state.notes.Damage)/10,
-                                                    Farm:(this.state.notes.Farm)/10,
-                                                    Golds:(this.state.notes.Golds)/10,
-                                                    Vision:(this.state.notes.Vision)/10,
-                                                    killParticipation:(this.state.notes.killParticipation)/10,
-                                                    },
-                                                meta:{color:'red'},
-                                                },
-                                        ]} size={300} />
-                        </div>
                         <h3> Conseil:</h3>
                         <body style={{"padding-top":"0px"}}>
                             <p className="text text-white bg-dark" style={{"whiteSpace":"pre-wrap"}}>
@@ -229,6 +222,21 @@ class conseil_joueur extends Component {
                                     <option value="CHALLENGER">CHALLENGER</option>
                                 </select>
                         </form>
+                        <div>
+                            <p className="h5" position="center" className="h3">Analyse des performances</p>
+                            <RadarChart captions={this.captions} data={[
+                                            {
+                                            data:{
+                                                    Damage:(this.state.notes.Damage)/10,
+                                                    Farm:(this.state.notes.Farm)/10,
+                                                    Golds:(this.state.notes.Golds)/10,
+                                                    Vision:(this.state.notes.Vision)/10,
+                                                    killParticipation:(this.state.notes.killParticipation)/10,
+                                                    },
+                                                meta:{color:'red'},
+                                                },
+                                        ]} size={300} />
+                        </div>
                     </div>
                 </div>
             </div>
